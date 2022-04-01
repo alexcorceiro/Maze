@@ -25,7 +25,22 @@ class struc{
     isempty() {
         return this.space.length === 0 
     }
-    
+    Sort(x, y) {
+        return this.Values(x, y) === this.end
+    }
+
+    Stop(x, y) {
+        return this.Values(x, y) === this.mur
+    }
+    Values(x, y) {
+        return this.grid[y][x]
+    }
+
+    getValues(x, y, value) {
+        if (this.Values(x, y) != this.start) {
+            this.grid[y][x] = value
+        }
+    }
     findSort(x, y) {
         if (this.isOutside(x, y)) {
             return false
@@ -43,7 +58,7 @@ class struc{
             return false
         }
 
-        this.setValue(x, y, this.chemin)
+        this.getValues(x, y, this.chemin)
 
 
         if (this.findSort(x, y - 1)) {
@@ -53,29 +68,11 @@ class struc{
             return true
         }
 
-        if (this.findSort(x, y + 1)) {
-            return true
-        }
-
-        if (this.findSort(x - 1, y)) {
-            return true
-        }
-
-        this.setValue(x, y, this.space)
+        this.getValues(x, y, this.space)
         return false
     }
 
-  
-
-    Sort(x, y) {
-        return this.Values(x, y) === this.end
-    }
-
-    Stop(x, y) {
-        return this.Values(x, y) === this.mur
-    }
-
-    isOpen(x, y) {
+   isEmpty(x, y) {
         if (this.Values(x, y) == this.space) {
             return true
         }
@@ -97,15 +94,7 @@ class struc{
 
         return false
     }
-    Values(x, y) {
-        return this.grid[y][x]
-    }
-
-    setValue(x, y, value) {
-        if (this.Values(x, y) != this.start) {
-            this.grid[y][x] = value
-        }
-    }
+    
 }
 
 

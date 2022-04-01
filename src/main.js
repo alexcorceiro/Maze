@@ -17,7 +17,7 @@ let yend = -1;
 //let player = 0;
 
 const fileAsArray = docsasarray.forEach((line, key) => {
-    if (line == fileAsArray.isempty) {
+    if (line == fileAsArray.isempty.isEmpty) {
       return true;
     } else {
       const arrayLine = line;
@@ -41,11 +41,11 @@ const fileAsArray = docsasarray.forEach((line, key) => {
 
   }
 
-  for(let x = 0; x < height; x++ ){
-    const z = grid[x]
-    const y =z.indexOf("1")
+  for(let y = 0; y < height; y++ ){
+    const z = grid[y]
+    const x =z.indexOf("1")
 
-    if(y =-1){
+    if(x != -1){
       xstart = x
       yend = y
       break
