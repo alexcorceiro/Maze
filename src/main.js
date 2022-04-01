@@ -56,7 +56,7 @@ const fileAsArray = docsasarray.forEach((line, key) => {
       height = grid[0].length
     }
     s.findSort(xstart, yend)
-    console.log('vous avez trouvez la sortie !!!', sortie);
+    console.log('you win !!!', sortie);
   }
  
   Game(docsasarray);

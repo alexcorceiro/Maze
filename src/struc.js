@@ -42,7 +42,7 @@ class struc{
         }
     }
     findSort(x, y) {
-        if (this.isOutside(x, y)) {
+        if (this.isSort(x, y)) {
             return false
         }
 
@@ -83,7 +83,7 @@ class struc{
 
         return false
     }
-    isOutside(x, y) {
+    isSort(x, y) {
         if (x >= this.width || x < 0) {
             return true
         }
